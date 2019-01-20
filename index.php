@@ -23,7 +23,7 @@
                 </div>
                 <div class="form-row form-group">
                     <div class="col-md-6">
-                        <input type="text" name="case_number" class="form-control" placeholder="رقم الدعوى">
+                        <input type="text" id="case_number" name="case_number" class="form-control" placeholder="رقم الدعوى">
                     </div>
                     <div class="col-md-6">
                         <input type="text" name="document_date" class="form-control" placeholder="تاريخ العقد">
@@ -38,7 +38,7 @@
                             <label class="custom-control-label" for="document1">غيابي</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="document2" name="document" value="slef" class="custom-control-input">
+                            <input type="radio" id="document2" name="document" value="self" class="custom-control-input">
                             <label class="custom-control-label" for="document2">بشخصه</label>
                         </div>
                         <div class="custom-control custom-radio">
@@ -124,8 +124,8 @@
                 e.preventDefault();
                 $.post("./app.php", $("#main_form").serialize());
                 $("[name='index']").val(function (i, oldValue) { return parseInt(oldValue) + 1; });
-                $("[name='case_number']").val('');
                 $("[name='document_date']").val('');
+                $("#case_number").val('').focus();
             });
         });
     </script>

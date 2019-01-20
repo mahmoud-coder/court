@@ -20,8 +20,9 @@ use \PhpOffice\PhpWord\TemplateProcessor;
 
 $plaintiff = $_POST['plaintiff'];
 $defendant = $_POST['defendant'];
+$document = $_POST['document'];
 
-$template = new TemplateProcessor('./templates/absent.docx');
+$template = new TemplateProcessor("./templates/{$document}.docx");
 $template->setValue("رقم الدعوى",$_POST['case_number']);
 $template->setValue("تاريخ العقد",$_POST['document_date']);
 $template->setValue("تاريخ الجلسة",$_POST['session_date']);
@@ -58,7 +59,6 @@ $template->saveAs("./output/{$case_document_name}");
 function plaintiff($male,$female,$two_male,$two_female,$many_male,$many_female){
     global $plaintiff;
     global $template;
-    $value='';
     switch ($plaintiff){
         case "male":
         $value=$male;
@@ -85,7 +85,6 @@ function plaintiff($male,$female,$two_male,$two_female,$many_male,$many_female){
 function defendant($male,$female,$two_male,$two_female,$many_male,$many_female){
     global $defendant;
     global $template;
-    $value='';
     switch ($defendant){
         case "male":
         $value= str_replace('+','',$male);
