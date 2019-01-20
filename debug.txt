@@ -1,0 +1,57 @@
+------------------------------
+array(5) {
+  ["index"]=>  string(1) "1"
+  ["case_number"]=>  string(4) "1415"
+  ["document_date"]=>  string(10) "15/10/2015"
+  ["plaintiff"]=>  string(4) "male"
+  ["session_date"]=>  string(9) "30/1/2019"
+}
+------------------------------
+array(5) {
+  ["index"]=>  string(1) "1"
+  ["case_number"]=>  string(4) "1415"
+  ["document_date"]=>  string(10) "15/10/2015"
+  ["plaintiff"]=>  string(4) "male"
+  ["session_date"]=>  string(9) "30/1/2019"
+}
+------------------------------
+we are in
+*********
+NULL
+------------------------------
+array(5) {
+  ["index"]=>  string(1) "2"
+  ["case_number"]=>  string(4) "1412"
+  ["document_date"]=>  string(9) "15/2/2016"
+  ["plaintiff"]=>  string(6) "female"
+  ["session_date"]=>  string(9) "30/1/2019"
+}
+------------------------------
+we are in
+*********
+NULL
+------------------------------
+array(5) {
+  ["index"]=>  string(1) "3"
+  ["case_number"]=>  string(4) "1478"
+  ["document_date"]=>  string(9) "15/2/2016"
+  ["plaintiff"]=>  string(9) "many_male"
+  ["session_date"]=>  string(9) "30/1/2019"
+}
+------------------------------
+we are in
+*********
+NULL
+------------------------------
+array(6) {
+  ["index"]=>  string(1) "1"
+  ["case_number"]=>  string(4) "1514"
+  ["document_date"]=>  string(9) "12/7/2018"
+  ["plaintiff"]=>  string(6) "female"
+  ["defendant"]=>  string(9) "many_male"
+  ["session_date"]=>  string(0) ""
+}
+------------------------------
+we are in
+*********
+NULL
