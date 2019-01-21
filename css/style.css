@@ -1,10 +1,4 @@
 body{
     direction: rtl;
 }
-#session-detail{
-    border-radius: 0.25rem;
-    border:gray 1px solid;
-    margin-top: -10px;
-    padding: 9px;
-    background-color: lightblue;
-}
+

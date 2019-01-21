@@ -11,10 +11,11 @@
 
 <body>
     <div class="container">
-        <h1 class="text-center display-4">Mahmoud Sami</h1>
+        <h1 class="text-center text-info display-4">Mahmoud Sami</h1>
         <hr class="my-4">
         <form class="row" id="main_form">
-            <div class="col" id="case-detail ">
+            <div class="col" id="case-detail">
+                <input type="text" class="form-control mb-3" placeholder="تاريخ الجلسة" name="session_date">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend ">
                         <span class="input-group-text" id="index-label">مسلسل</span>
@@ -22,10 +23,10 @@
                     <input type="text" name="index" class="form-control" value="1" aria-describedby="index-label">
                 </div>
                 <div class="form-row form-group">
-                    <div class="col-md-6">
+                    <div class="col">
                         <input type="text" id="case_number" name="case_number" class="form-control" placeholder="رقم الدعوى">
                     </div>
-                    <div class="col-md-6">
+                    <div class="col">
                         <input type="text" name="document_date" class="form-control" placeholder="تاريخ العقد">
                     </div>
                 </div>
@@ -48,6 +49,24 @@
                         <div class="custom-control custom-radio">
                             <input type="radio" id="document4" name="document" value="attend_absent" class="custom-control-input">
                             <label class="custom-control-label" for="document4">غيابي + حضور</label>
+                        </div>
+                        <hr class="my-2">
+                        <u class="d-block text-center text-primary">عدم إنعقاد الخصومة</u>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="document5" name="document" value="a" class="custom-control-input">
+                            <label class="custom-control-label" for="document5">تحري عدم مثول</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="document6" name="document" value="b" class="custom-control-input">
+                            <label class="custom-control-label" for="document6">تحري غير منفذ</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="document7" name="document" value="c"  class="custom-control-input">
+                            <label class="custom-control-label" for="document7">عدم اعادة اعلان</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="document8" name="document" value="d" class="custom-control-input">
+                            <label class="custom-control-label" for="document8">عدم مثول لاعادة الاعلان</label>
                         </div>
                     </div>
                     <!-- the kind of plaintiff -->
@@ -109,9 +128,6 @@
                 <div class="form-group">
                     <input type="submit" value="أكتب الحكم" id="submit" class="btn btn-primary">
                 </div>
-            </div>
-            <div class="col" id="session-detail">
-                <input type="text" class="form-control" placeholder="تاريخ الجلسة" name="session_date">
             </div>
         </form>
     </div>

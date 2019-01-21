@@ -1,10 +1,8 @@
 <?php
-debug($_POST);
 if(! isset($_POST['index'])) die("No Access Right!!");
-debug(null,"we are in");
 function debug($obj,$msg=false){
     ob_start(function($buff){
-        $f = fopen('D:\xampp\htdocs\PHPWord\debug.txt','a+');
+        $f = fopen('D:\xampp\htdocs\court\debug.txt','a+');
         fwrite($f,str_replace("=>\n","=>", $buff));
         fclose($f);
     });
