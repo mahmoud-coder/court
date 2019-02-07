@@ -61,7 +61,7 @@
                             <label class="custom-control-label" for="document6">تحري غير منفذ</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="document7" name="document" value="c"  class="custom-control-input">
+                            <input type="radio" id="document7" name="document" value="c" class="custom-control-input">
                             <label class="custom-control-label" for="document7">عدم اعادة اعلان</label>
                         </div>
                         <div class="custom-control custom-radio">
@@ -135,17 +135,26 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.rtl.js"></script>
     <script>
-    (function($){
-        $(function () {
-            $("#main_form").submit(function (e) {
-                e.preventDefault();
-                $.post("./app.php", $("#main_form").serialize());
-                $("[name='index']").val(function (i, oldValue) { return parseInt(oldValue) + 1; });
-                $("[name='document_date']").val('');
-                $("#case_number").val('').focus();
+        (function ($) {
+            var $index = $("[name='index']"),
+                $case_number = $("#case_number"),
+                $document_date = $("[name='document_date']");
+
+            $(function () {
+                $(document).on("keypress", "form", function (e) {
+                    if (e.keyCode == 13 /* enter key*/) {
+                        if ($case_number.is(":focus")) { $document_date.focus(); return false; }
+                    }
+                });
+                $("#main_form").submit(function (e) {
+                    e.preventDefault();
+                    $.post("./app.php", $("#main_form").serialize());
+                    $index.val(function (i, oldValue) { return parseInt(oldValue) + 1; });
+                    $document_date.val('');
+                    $case_number.val('').focus();
+                });
             });
-        });
-    }(jQuery));
+        }(jQuery));
     </script>
 </body>
 
