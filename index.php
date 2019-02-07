@@ -135,6 +135,7 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.rtl.js"></script>
     <script>
+    (function($){
         $(function () {
             $("#main_form").submit(function (e) {
                 e.preventDefault();
@@ -144,6 +145,7 @@
                 $("#case_number").val('').focus();
             });
         });
+    }(jQuery));
     </script>
 </body>
 
