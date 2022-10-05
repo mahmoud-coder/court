@@ -33,42 +33,7 @@
                 <!-- the row of radio bottons -->
                 <div class="form-row">
                     <!-- the kind of document -->
-                    <div class="col mb-3">
-                        <div class="custom-control custom-radio">
-                            <input type="radio" id="document1" name="document" value="absent" class="custom-control-input">
-                            <label class="custom-control-label" for="document1">غيابي</label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                            <input type="radio" id="document2" name="document" value="self" class="custom-control-input">
-                            <label class="custom-control-label" for="document2">بشخصه</label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                            <input type="radio" id="document3" name="document" value="agent" class="custom-control-input">
-                            <label class="custom-control-label" for="document3">بوكيل</label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                            <input type="radio" id="document4" name="document" value="attend_absent" class="custom-control-input">
-                            <label class="custom-control-label" for="document4">غيابي + حضور</label>
-                        </div>
-                        <hr class="my-2">
-                        <u class="d-block text-center text-primary">عدم إنعقاد الخصومة</u>
-                        <div class="custom-control custom-radio">
-                            <input type="radio" id="document5" name="document" value="a" class="custom-control-input">
-                            <label class="custom-control-label" for="document5">تحري عدم مثول</label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                            <input type="radio" id="document6" name="document" value="b" class="custom-control-input">
-                            <label class="custom-control-label" for="document6">تحري غير منفذ</label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                            <input type="radio" id="document7" name="document" value="c"  class="custom-control-input">
-                            <label class="custom-control-label" for="document7">عدم اعادة اعلان</label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                            <input type="radio" id="document8" name="document" value="d" class="custom-control-input">
-                            <label class="custom-control-label" for="document8">عدم مثول لاعادة الاعلان</label>
-                        </div>
-                    </div>
+                    <div class="col mb-3" id="kind-of-document"></div>
                     <!-- the kind of plaintiff -->
                     <div class="col mb-3">
                         <div class="custom-control custom-radio">
@@ -131,20 +96,27 @@
             </div>
         </form>
     </div>
+    <script type="text/template" id="kind-of-document-template">
+        <# var i = 0; #>
+        <# templates.forEach(function(template){ #>
+            <# ++i; #>
+            <# if(template.type == "template"){ #>
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="document-{{i}}" name="document" value="{{template.fileName}}"
+                    class="custom-control-input">
+                    <label class="custom-control-label" for="document-{{i}}">{{template.label}}</label>
+                </div>
+            <# } else if(template.type=="line"){ #>
+                <hr class="my-2">
+            <# } else { /* the template.type is label */ #>
+                <u class="d-block text-center text-primary">{{template.label}}</u>
+            <# } #>
+        <# }); #>
+    </script>
     <script src="js/jq.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.rtl.js"></script>
-    <script>
-        $(function () {
-            $("#main_form").submit(function (e) {
-                e.preventDefault();
-                $.post("./app.php", $("#main_form").serialize());
-                $("[name='index']").val(function (i, oldValue) { return parseInt(oldValue) + 1; });
-                $("[name='document_date']").val('');
-                $("#case_number").val('').focus();
-            });
-        });
-    </script>
+    <script src="templates/templates-disc.js"></script>
+    <script src="js/form.js"></script>
 </body>
-
 </html>
